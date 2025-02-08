@@ -28,7 +28,7 @@ jobs:
         with:
           image-ref: localhost/${{ env.IMAGE_NAME }}
           timeout: 30m0s
-          docker-host: /run/user/1001/podman/podman.sock
+          docker-host: /usr/lib/systemd/user/podman.socket
         env:
           TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db,public.ecr.aws/aquasecurity/trivy-db
 

@@ -27,9 +27,8 @@ jobs:
         uses: aquasecurity/trivy-action@18f2510ee396bbf400402947b394f2dd8c87dbb0 # v0.29.0
         with:
           image-ref: localhost/${{ env.IMAGE_NAME }}
-          format: table
-          scanners: vuln,secret,misconfig
           timeout: 30m0s
+          docker-host: /run/user/1001/podman/podman.sock
         env:
           TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db,public.ecr.aws/aquasecurity/trivy-db
 

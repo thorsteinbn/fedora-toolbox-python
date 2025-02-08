@@ -1,6 +1,6 @@
 FROM registry.fedoraproject.org/fedora-toolbox:38
 
-ARG name=fedora-toolbox-python
+ARG name=tbn-fedora-toolbox-python
 
 LABEL name="$NAME" \
       summary="Fedora toolbox container with python" \

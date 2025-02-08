@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run build
-        run: buildah build -f Containerfile
+        run: buildah build -f Containerfile -t tbn-fedora-toolbox-python

@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Install buildah
-        run: sudo apt install -y buildah
+      - name: Run build
+        run: buildah build .

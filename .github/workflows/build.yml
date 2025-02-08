@@ -9,10 +9,6 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: test
-        run: |
-          cd ..
-          ls -lash
-
+      - uses: actions/checkout@v4
       - name: Run build
         run: buildah build -f Containerfile

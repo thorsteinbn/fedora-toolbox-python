@@ -10,7 +10,9 @@ jobs:
 
     steps:
       - name: test
-        run: ls -lash
+        run: |
+          cd ..
+          ls -lash
 
       - name: Run build
         run: buildah build -f Containerfile

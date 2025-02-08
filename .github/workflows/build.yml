@@ -1,0 +1,13 @@
+name: Build image
+
+on:
+  push:
+
+jobs:
+  build_image:
+    name: Build image with buildah
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Install buildah
+        run: apt install -y buildah

@@ -19,6 +19,7 @@ jobs:
         run: buildah build -f Containerfile -t $IMAGE_NAME
 
       - name: Upload image
+        
         run: |
           buildah login -u ${{ github.actor }} -p ${{ github.token }} ghcr.io
-          buildah push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
+          buildah push $IMAGE_NAME ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest

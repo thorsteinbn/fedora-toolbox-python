@@ -5,6 +5,8 @@ on:
 
   workflow_run:
     workflows: ["Build image"] # Scan automatically after build
+    types:
+      - completed
 
   workflow_dispatch: # allow manually triggering builds
 

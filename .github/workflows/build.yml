@@ -10,4 +10,6 @@ jobs:
 
     steps:
       - name: Run build
-        run: buildah build .
+        run: |
+          ls 
+          buildah build .

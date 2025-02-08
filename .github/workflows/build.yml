@@ -3,6 +3,10 @@ name: Build image
 on:
   push:
 
+env:
+  IMAGE_NAME: tbn-fedora-toolbox-python
+  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+
 jobs:
   build_image:
     name: Build image with buildah
@@ -10,5 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Run build
         run: buildah build -f Containerfile -t tbn-fedora-toolbox-python
+
+      - name: Upload image
+        if: github.ref == 'refs/heads/main'
+        run: |
+          buildah login -u ${{ github.actor }} -p ${{ github.token }} ghcr.io
+          

@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Install buildah
-        run: apt install -y buildah
+        run: sudo apt install -y buildah

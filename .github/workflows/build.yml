@@ -16,9 +16,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run build
-        run: buildah build -f Containerfile -t tbn-fedora-toolbox-python
+        run: buildah build -f Containerfile -t $IMAGE_NAME
 
       - name: Upload image
         run: |
           buildah login -u ${{ github.actor }} -p ${{ github.token }} ghcr.io
-          
+          buildah push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest

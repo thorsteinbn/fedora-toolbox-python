@@ -11,6 +11,8 @@ jobs:
   build_image:
     name: Build image with buildah
     runs-on: ubuntu-24.04
+    permissions:
+      packages: write
 
     steps:
       - uses: actions/checkout@v4

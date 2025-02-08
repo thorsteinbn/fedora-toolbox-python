@@ -9,5 +9,8 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
+      - name: test
+        run: ls
+
       - name: Run build
         run: buildah build -f Containerfile
